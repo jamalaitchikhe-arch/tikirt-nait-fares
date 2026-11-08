@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مجموعة مدارس تيكرت نايت فارس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Tajawal:wght@400;500;700;800&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --clay:#b5532f;      /* طين القصبات */
+  --clay-d:#8a3b1f;
+  --ochre:#d99a3d;     /* شمس الجبل */
+  --sand:#f6ecdc;
+  --sand-2:#efe0c6;
+  --palm:#1f5e4a;      /* غابات الجبل */
+  --palm-d:#143f32;
+  --ink:#2a211b;
+  --muted:#6f6257;
+  --white:#fffdf9;
+  --r:18px;
+  --shadow:0 18px 40px -22px rgba(74,40,20,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Tajawal",system-ui,sans-serif;color:var(--ink);background:var(--sand);line-height:1.8;font-size:17px;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+h1,h2,h3{font-family:"Reem Kufi",sans-serif;line-height:1.35}
+
+/* ===== رأسية رسمية ===== */
+.letterhead{background:#fff;border-bottom:4px solid var(--clay)}
+.letterhead img{width:min(1000px,100%);margin-inline:auto}
+
+/* ===== شريط التنقل ===== */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(20,63,50,.96);backdrop-filter:blur(8px);color:#fff;box-shadow:0 6px 20px -12px rgba(0,0,0,.5)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Reem Kufi";font-size:1.12rem;font-weight:700;white-space:nowrap}
+.brand-mark{width:38px;height:38px;flex:none}
+.menu{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+.menu a{display:block;padding:8px 11px;border-radius:999px;font-weight:500;font-size:.95rem;transition:.25s}
+.menu a:hover,.menu a.active{background:var(--ochre);color:var(--palm-d)}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px}
+.burger span{display:block;width:26px;height:3px;background:#fff;margin:5px 0;border-radius:3px;transition:.3s}
+
+/* ===== البطل ===== */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 15% 20%,rgba(217,154,61,.35),transparent 45%),
+  linear-gradient(160deg,var(--palm-d) 0%,var(--palm) 55%,#2c7a5f 100%);color:#fff;padding:90px 0 0}
+.hero::before{content:"";position:absolute;inset:0;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpath d='M40 4l10 26 26 10-26 10-10 26-10-26L4 40l26-10z'/%3E%3Ccircle cx='40' cy='40' r='9'/%3E%3C/g%3E%3C/svg%3E")}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 16px;border-radius:999px;font-size:.9rem;margin-bottom:18px}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--ochre);box-shadow:0 0 0 4px rgba(217,154,61,.3)}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--ochre)}
+.hero .ruqaa{font-family:"Aref Ruqaa",serif;font-size:clamp(1.3rem,2.6vw,1.8rem);color:#f8dfb3;margin-bottom:16px}
+.hero p.lead{font-size:1.1rem;opacity:.92;max-width:560px;margin-bottom:28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;transition:.25s;border:2px solid transparent;cursor:pointer;font-family:inherit;font-size:1rem}
+.btn-main{background:var(--ochre);color:var(--palm-d)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 12px 24px -10px rgba(217,154,61,.8)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--palm-d)}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:440px;justify-self:center;width:100%}
+.sun{position:absolute;inset:8% 8% auto auto;width:62%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#f5c26b,#d99a3d 60%,#b5532f);animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.hero-art svg{position:absolute;inset:auto 0 0 0;width:100%}
+.dunes{display:block;width:100%;height:90px;margin-top:40px}
+
+/* ===== أقسام عامة ===== */
+section{padding:90px 0}
+.sec-head{text-align:center;max-width:700px;margin:0 auto 50px}
+.sec-head .tag{display:inline-block;color:var(--clay);font-weight:800;letter-spacing:.5px;margin-bottom:6px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);color:var(--palm-d)}
+.sec-head p{color:var(--muted);margin-top:10px}
+.zellige-line{width:120px;height:12px;margin:14px auto 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M0 6l6-6 6 6-6 6zM12 6l6-6 6 6-6 6z' fill='%23b5532f'/%3E%3C/svg%3E") repeat-x}
+
+/* بطاقات */
+.grid{display:grid;gap:24px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--white);border-radius:var(--r);padding:30px 26px;box-shadow:var(--shadow);position:relative;transition:.3s;border:1px solid #ecdcc2}
+.card:hover{transform:translateY(-6px)}
+.ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;margin-bottom:16px;background:var(--sand-2);color:var(--clay)}
+.ico svg{width:30px;height:30px}
+.card h3{font-size:1.25rem;color:var(--palm-d);margin-bottom:8px}
+.card p{color:var(--muted);font-size:.98rem}
+
+/* عن المؤسسة */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-text h2{font-size:clamp(1.7rem,3.2vw,2.4rem);color:var(--palm-d);margin-bottom:16px}
+.about-text p{color:var(--muted);margin-bottom:14px}
+.values{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.values span{background:var(--sand);border:1px solid #e6d2b0;color:var(--clay-d);padding:7px 16px;border-radius:999px;font-weight:700;font-size:.92rem}
+.arch{position:relative;border-radius:200px 200px var(--r) var(--r);overflow:hidden;background:linear-gradient(180deg,#e7b468,var(--clay));aspect-ratio:4/5;max-width:420px;justify-self:center;width:100%;box-shadow:var(--shadow)}
+.arch svg{position:absolute;inset:0;width:100%;height:100%}
+.arch .badge{position:absolute;bottom:22px;inset-inline:22px;background:rgba(255,253,249,.94);border-radius:14px;padding:14px 18px;font-weight:700;color:var(--palm-d);display:flex;gap:12px;align-items:center}
+.arch .badge b{font-family:"Reem Kufi";color:var(--clay);font-size:1.4rem}
+
+/* الوحدات */
+.units{background:linear-gradient(180deg,var(--white),var(--sand))}
+.units-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:22px}
+.unit{position:relative;background:var(--white);border-radius:var(--r);padding:30px 24px 26px;box-shadow:var(--shadow);border:1px solid #ecdcc2;border-top:6px solid var(--palm);transition:.3s;color:var(--palm)}
+.unit:nth-child(3){border-top-color:var(--ochre);color:var(--ochre)}
+.unit:nth-child(4){border-top-color:var(--clay);color:var(--clay)}
+.unit:hover{transform:translateY(-6px)}
+.unit.main{background:linear-gradient(160deg,var(--palm-d),var(--palm));color:var(--ochre);border:0;border-top:6px solid var(--ochre)}
+.unit.main h3{color:#fff}.unit.main p{color:#e6efe9}
+.unit-tag{position:absolute;top:16px;inset-inline-end:16px;font-size:.78rem;font-weight:800;padding:3px 11px;border-radius:999px;background:var(--sand);color:var(--clay-d)}
+.unit.main .unit-tag{background:var(--ochre);color:var(--palm-d)}
+.unit-ico{width:56px;height:56px;margin-bottom:14px}
+.unit h3{font-size:1.3rem;color:var(--palm-d);margin-bottom:6px}
+.unit p{color:var(--muted);font-size:.96rem}
+@media (max-width:980px){.units-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.units-grid{grid-template-columns:1fr}}
+
+/* المستويات */
+.levels .card{text-align:center;padding:28px 18px}
+.level-num{font-family:"Reem Kufi";font-size:2.4rem;color:var(--clay);line-height:1}
+.levels .card:nth-child(even) .level-num{color:var(--palm)}
+
+/* الأندية */
+.clubs{background:linear-gradient(180deg,var(--sand) 0%,var(--sand-2) 100%)}
+.club-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:34px;background:var(--palm-d);color:#fff}
+.club-feature .txt{padding:44px 40px}
+.club-feature .pill{display:inline-block;background:var(--ochre);color:var(--palm-d);font-weight:800;padding:5px 14px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+.club-feature h3{font-size:clamp(1.5rem,2.8vw,2.1rem);margin-bottom:12px}
+.club-feature p{opacity:.9;margin-bottom:16px}
+.club-feature ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+.club-feature li{display:flex;gap:8px;align-items:center}
+.club-feature li::before{content:"✦";color:var(--ochre)}
+.club-feature .vis{background:
+  radial-gradient(circle at 30% 30%,rgba(255,255,255,.18),transparent 40%),
+  linear-gradient(135deg,var(--clay),var(--ochre));display:grid;place-items:center;min-height:300px}
+.club-feature .vis svg{width:60%;max-width:240px}
+
+/* الإذاعة */
+.radio{background:var(--clay-d);color:#fff;position:relative;overflow:hidden}
+.radio::after{content:"";position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E")}
+.radio .wrap{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center}
+.mic{width:130px;height:130px;border-radius:50%;background:var(--ochre);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(217,154,61,.25),0 0 0 28px rgba(217,154,61,.12);animation:pulse 2.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 20px rgba(217,154,61,.18),0 0 0 40px rgba(217,154,61,.06)}}
+.mic svg{width:60px;color:var(--palm-d)}
+.radio h2{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:8px}
+.radio p{opacity:.9}
+.eq{display:flex;gap:5px;align-items:flex-end;height:60px}
+.eq i{width:8px;background:var(--ochre);border-radius:4px;animation:eq 1.1s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}.eq i:nth-child(4){animation-delay:.1s}.eq i:nth-child(5){animation-delay:.3s}.eq i:nth-child(6){animation-delay:.5s}
+@keyframes eq{0%,100%{height:15%}50%{height:100%}}
+
+/* الأجندة */
+.agenda-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.date-card{display:flex;gap:16px;align-items:center;background:var(--white);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow);border-inline-start:6px solid var(--clay)}
+.date-card:nth-child(3n+2){border-inline-start-color:var(--palm)}
+.date-card:nth-child(3n){border-inline-start-color:var(--ochre)}
+.date-box{flex:none;width:64px;text-align:center;background:var(--sand);border-radius:12px;padding:6px 0;font-weight:800;color:var(--clay-d);line-height:1.2}
+.date-box b{display:block;font-family:"Reem Kufi";font-size:1.6rem;color:var(--palm-d)}
+.date-card h4{font-size:1.02rem;color:var(--palm-d)}
+.date-card small{color:var(--muted)}
+
+/* فضاء الآباء */
+.parents{background:var(--white)}
+.parents-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+.tips{display:grid;gap:14px}
+.tip{display:flex;gap:14px;align-items:flex-start;background:var(--sand);padding:16px 18px;border-radius:14px}
+.tip .n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--palm);color:#fff;display:grid;place-items:center;font-weight:800}
+.faq details{background:var(--sand);border-radius:14px;margin-bottom:12px;border:1px solid #ead9bb;overflow:hidden}
+.faq summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--palm-d);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;color:var(--clay);transition:.3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 20px 18px;color:var(--muted)}
+.parents h3.side{font-size:1.4rem;color:var(--palm-d);margin-bottom:16px}
+
+/* التواصل */
+.contact .grid .card{text-align:center}
+.contact .ico{margin-inline:auto}
+.contact .card a,.contact .card .val{font-weight:700;color:var(--clay-d);direction:ltr;display:inline-block}
+
+/* التذييل */
+footer{background:var(--palm-d);color:#e9e2d6;padding:60px 0 0;position:relative}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;padding-bottom:40px}
+footer h4{font-family:"Reem Kufi";color:var(--ochre);margin-bottom:12px;font-size:1.15rem}
+footer ul{list-style:none}
+footer li{margin-bottom:6px}
+footer li a:hover{color:var(--ochre)}
+.credit{background:#0e2e24;padding:22px 0;text-align:center;border-top:3px solid var(--ochre)}
+.credit .made{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;font-size:1.02rem}
+.credit .made strong{font-family:"Reem Kufi";color:var(--ochre);font-size:1.18rem}
+.credit .made svg{width:26px;height:26px;color:var(--ochre)}
+.credit small{display:block;opacity:.65;margin-top:6px;font-size:.85rem}
+
+/* رجوع للأعلى */
+.to-top{position:fixed;bottom:22px;left:22px;width:48px;height:48px;border-radius:50%;background:var(--clay);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.3s;z-index:60}
+.to-top.show{opacity:1;pointer-events:auto}
+
+/* ظهور تدريجي */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* تجاوب */
+@media (max-width:980px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:1fr 1fr}
+  .hero .wrap,.about-grid,.club-feature,.parents-grid{grid-template-columns:1fr}
+  .hero-art{max-width:320px}
+  .radio .wrap{grid-template-columns:1fr;text-align:center;justify-items:center}
+  footer .cols{grid-template-columns:1fr 1fr}
+  .burger{display:block}
+  .menu{position:absolute;top:100%;inset-inline:0;background:var(--palm-d);flex-direction:column;padding:10px 4%;max-height:0;overflow:hidden;transition:max-height .4s}
+  .menu.open{max-height:520px;padding-bottom:16px}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .g3,.g4{grid-template-columns:1fr}
+  .club-feature .txt{padding:30px 24px}
+  .club-feature ul{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+  .brand span.long{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- الرأسية الرسمية -->
+<header class="letterhead" id="top">
+  <img src="header.jpg" alt="المملكة المغربية - وزارة التربية الوطنية والتعليم الأولي والرياضة - الأكاديمية الجهوية للتربية والتكوين لجهة درعة تافيلالت - المديرية الإقليمية ورزازات - م/م تيكرت نايت فارس">
+</header>
+
+<!-- التنقل -->
+<nav class="top">
+  <div class="wrap">
+    <a href="#home" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l5 13 13 5-13 5-5 13-5-13L2 20l13-5z" fill="#d99a3d"/><circle cx="20" cy="20" r="5" fill="#143f32"/></svg>
+      <span>م/م تيكرت نايت فارس</span>
+    </a>
+    <button class="burger" aria-label="القائمة" id="burger"><span></span><span></span><span></span></button>
+    <ul class="menu" id="menu">
+      <li><a href="#home" class="active">الرئيسية</a></li>
+      <li><a href="#about">عن المؤسسة</a></li>
+      <li><a href="#units">الوحدات</a></li>
+      <li><a href="#levels">المستويات</a></li>
+      <li><a href="#clubs">الأندية</a></li>
+      <li><a href="#radio">الإذاعة</a></li>
+      <li><a href="#agenda">الأجندة</a></li>
+      <li><a href="#parents">فضاء الآباء</a></li>
+      <li><a href="#contact">اتصل بنا</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- البطل -->
+<section class="hero" id="home" style="padding-bottom:0">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><i></i> المديرية الإقليمية ورزازات · جهة درعة تافيلالت</span>
+      <h1>مجموعة مدارس <em>تيكرت نايت فارس</em></h1>
+      <div class="ruqaa">من أعالي الجبال… نصنع إنسان الغد</div>
+      <p class="lead">فضاء تربوي عمومي يحتضن أبناء المنطقة، يجمع بين جودة التعلّمات وروح المواطنة، ويفتح أمام المتعلمين آفاق الإبداع والمهارات الحياتية.</p>
+      <div class="btns">
+        <a href="#about" class="btn btn-main">تعرّف على مؤسستنا ←</a>
+        <a href="#clubs" class="btn btn-ghost">أنديتنا وأنشطتنا</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun"></div>
+      <svg viewBox="0 0 400 300">
+        <!-- جبال بعيدة -->
+        <path d="M0 300V170l55-60 40 35 70-95 60 70 45-45 70 80 60-40v185z" fill="#2c7a5f" opacity=".75"/>
+        <path d="M165 50l-22 30 12-4 10 10 9-12 12 6z M270 105l-14 14 8 0 6 6 6-8 8 2z" fill="#fffdf9" opacity=".95"/>
+        <!-- جبال قريبة -->
+        <path d="M0 300V220l70-70 50 40 60-60 70 75 50-35 100 90v40z" fill="#143f32"/>
+        <path d="M180 130l-16 18 9-2 7 7 7-8 9 3z" fill="#fffdf9" opacity=".9"/>
+        <!-- منحدر ومدرسة -->
+        <path d="M0 300c70-40 170-60 260-50s110 20 140 30v20z" fill="#8a3b1f"/>
+        <g transform="translate(150 212)">
+          <rect x="0" y="12" width="78" height="40" fill="#f6ecdc"/>
+          <path d="M-6 14L39 -10 84 14z" fill="#b5532f"/>
+          <rect x="32" y="28" width="14" height="24" fill="#d99a3d"/>
+          <rect x="10" y="22" width="12" height="11" fill="#1f5e4a"/><rect x="56" y="22" width="12" height="11" fill="#1f5e4a"/>
+          <path d="M39 -10v-24" stroke="#f6ecdc" stroke-width="2.5"/>
+          <path d="M39 -34h20v12H39z" fill="#c1272d"/>
+          <path d="M49 -31l1.4 4.2h4.4l-3.6 2.6 1.4 4.2-3.6-2.6-3.6 2.6 1.4-4.2-3.6-2.6h4.4z" fill="none" stroke="#1f5e4a" stroke-width=".9" transform="translate(0 0) scale(1)"/>
+        </g>
+        <!-- أشجار جبلية -->
+        <g fill="#1f5e4a">
+          <path d="M310 262l14-34 14 34z"/><path d="M314 244l10-26 10 26z"/><rect x="322" y="262" width="4" height="10" fill="#5a2a14"/>
+          <path d="M340 268l11-28 11 28z"/><rect x="349" y="268" width="4" height="8" fill="#5a2a14"/>
+          <path d="M60 278l12-30 12 30z"/><path d="M63 262l9-22 9 22z"/><rect x="70" y="278" width="4" height="9" fill="#5a2a14"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <svg class="dunes" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70L120 30 210 58 330 8 450 52 560 22 680 60 800 14 930 54 1050 26 1170 62 1300 18 1440 50V90H0z" fill="#fffdf9"/></svg>
+</section>
+
+<!-- عن المؤسسة -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <span class="sec-head" style="display:block;text-align:start;margin:0"><span class="tag">عن المؤسسة</span></span>
+      <h2>مدرسة عمومية في قلب الجبل، برسالة تربوية واضحة</h2>
+      <p>تنتمي مجموعة مدارس تيكرت نايت فارس إلى المديرية الإقليمية ورزازات التابعة للأكاديمية الجهوية للتربية والتكوين لجهة درعة تافيلالت، وتضم أربع وحدات مدرسية: الوحدة المركزية وفرعيات تايفست وتماكوشت وآيت فارس، تسهر جميعها على تقديم تعليم ابتدائي ذي جودة لأبناء المنطقة.</p>
+      <p>ورغم الطابع الجبلي للمنطقة ووعورة مسالكها، تظل المدرسة قريبة من أبنائها، حاضنةً لأحلامهم وطموحاتهم.</p>
+      <p>نؤمن بأن المدرسة ليست فقط مكانًا لتلقي المعارف، بل فضاء لاكتشاف المواهب وصقل الشخصية وترسيخ قيم المواطنة والانفتاح، في انسجام مع مشروع المؤسسة ورؤية الإصلاح التربوي.</p>
+      <div class="values">
+        <span>الجودة</span><span>الإنصاف</span><span>المواطنة</span><span>الإبداع</span><span>الانفتاح</span><span>الاحترام</span>
+      </div>
+    </div>
+    <div class="arch reveal" aria-hidden="true">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+        <defs><pattern id="z" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M25 0l7 18 18 7-18 7-7 18-7-18L0 25l18-7z" fill="rgba(255,255,255,.18)"/></pattern></defs>
+        <rect width="400" height="500" fill="url(#z)"/>
+        <g transform="translate(200 220)">
+          <circle r="90" fill="rgba(255,253,249,.92)"/>
+          <path d="M-45 -10h90v55h-90z" fill="#1f5e4a"/>
+          <path d="M-55 -10L0 -48 55 -10z" fill="#8a3b1f"/>
+          <rect x="-10" y="15" width="20" height="30" fill="#d99a3d"/>
+          <rect x="-35" y="2" width="14" height="14" fill="#f6ecdc"/><rect x="21" y="2" width="14" height="14" fill="#f6ecdc"/>
+          <path d="M0 -48v-22" stroke="#143f32" stroke-width="3"/><path d="M0 -70h18l-5 6 5 6H0z" fill="#b5532f"/>
+        </g>
+      </svg>
+      <div class="badge"><b>4</b> وحدات مدرسية في خدمة أبناء المنطقة</div>
+    </div>
+  </div>
+</section>
+
+<!-- الوحدات المدرسية -->
+<section class="units" id="units">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">مؤسسة واحدة · أربع وحدات</span>
+      <h2>الوحدات المدرسية</h2>
+      <p>تنتشر وحدات المجموعة بين الدواوير الجبلية لتقريب المدرسة من الأسر، بنفس المشروع التربوي ونفس الروح.</p>
+      <div class="zellige-line"></div>
+    </div>
+    <div class="units-grid">
+      <div class="unit main reveal">
+        <span class="unit-tag">المقر الرئيسي</span>
+        <svg class="unit-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 58V30l8-8 8 8V18l8-10 8 10v12l8-8 8 8v28z" fill="currentColor" opacity=".9"/><path d="M28 58V44a4 4 0 018 0v14z" fill="#143f32"/><path d="M32 8V0" stroke="currentColor" stroke-width="2"/></svg>
+        <h3>الوحدة المركزية</h3>
+        <p>مقر إدارة المجموعة ونواتها التربوية، ومنها تُنسَّق الأنشطة والأندية والإذاعة المدرسية.</p>
+      </div>
+      <div class="unit reveal">
+        <span class="unit-tag">فرعية</span>
+        <svg class="unit-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 58V30L32 14l22 16v28z" fill="currentColor"/><path d="M27 58V44a5 5 0 0110 0v14z" fill="#fffdf9"/></svg>
+        <h3>فرعية تايفست</h3>
+        <p>وحدة مدرسية تستقبل متعلمي الدوار ومحيطه في ظروف قريبة من الأسر.</p>
+      </div>
+      <div class="unit reveal">
+        <span class="unit-tag">فرعية</span>
+        <svg class="unit-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 58V30L32 14l22 16v28z" fill="currentColor"/><path d="M27 58V44a5 5 0 0110 0v14z" fill="#fffdf9"/></svg>
+        <h3>فرعية تماكوشت</h3>
+        <p>وحدة مدرسية تستقبل متعلمي الدوار ومحيطه في ظروف قريبة من الأسر.</p>
+      </div>
+      <div class="unit reveal">
+        <span class="unit-tag">فرعية</span>
+        <svg class="unit-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 58V30L32 14l22 16v28z" fill="currentColor"/><path d="M27 58V44a5 5 0 0110 0v14z" fill="#fffdf9"/></svg>
+        <h3>فرعية آيت فارس</h3>
+        <p>وحدة مدرسية تستقبل متعلمي الدوار ومحيطه في ظروف قريبة من الأسر.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- الرؤية والرسالة -->
+<section id="vision">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">توجهاتنا</span>
+      <h2>الرؤية · الرسالة · الأهداف</h2>
+      <div class="zellige-line"></div>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>رؤيتنا</h3>
+        <p>مدرسة رائدة في محيطها، يتعلّم فيها كل طفل بثقة وفرح، ويكتشف مواهبه ويطوّر مهارات المستقبل.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg></div>
+        <h3>رسالتنا</h3>
+        <p>تقديم تعليم منصف وذي جودة، يرسّخ التعلمات الأساس في القراءة والكتابة والحساب، ويغرس القيم الوطنية والإنسانية.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3>أهدافنا</h3>
+        <p>محاربة الهدر المدرسي، تحسين نتائج المتعلمين، تفعيل الحياة المدرسية والأندية التربوية، وتعزيز الشراكة مع الأسر.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- المستويات -->
+<section class="levels" id="levels" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">المسار الدراسي</span>
+      <h2>المستويات الدراسية</h2>
+      <p>مسار متكامل يرافق الطفل من سنواته الأولى حتى نهاية السلك الابتدائي.</p>
+      <div class="zellige-line"></div>
+    </div>
+    <div class="grid g4">
+      <div class="card reveal"><div class="level-num">أولي</div><h3 style="margin-top:10px">التعليم الأولي</h3><p>تنمية الحس الحركي واللغوي والاجتماعي عبر اللعب والتعلّم النشط.</p></div>
+      <div class="card reveal"><div class="level-num">1 · 2</div><h3 style="margin-top:10px">السنتان الأولى والثانية</h3><p>إرساء أسس القراءة والكتابة والحساب وبناء الثقة بالنفس.</p></div>
+      <div class="card reveal"><div class="level-num">3 · 4</div><h3 style="margin-top:10px">السنتان الثالثة والرابعة</h3><p>تعميق التعلمات، والانفتاح على اللغات والنشاط العلمي.</p></div>
+      <div class="card reveal"><div class="level-num">5 · 6</div><h3 style="margin-top:10px">السنتان الخامسة والسادسة</h3><p>تثبيت الكفايات والاستعداد الجيد للانتقال إلى التعليم الإعدادي.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- الأندية -->
+<section class="clubs" id="clubs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">الحياة المدرسية</span>
+      <h2>الأندية التربوية والأنشطة</h2>
+      <p>لأن التعلم لا يتوقف عند حدود القسم، نفتح لمتعلمينا فضاءات للتعبير والإبداع والمبادرة.</p>
+      <div class="zellige-line"></div>
+    </div>
+
+    <div class="club-feature reveal">
+      <div class="txt">
+        <span class="pill">النادي الرائد</span>
+        <h3>نادي الإبداع وتنمية المهارات</h3>
+        <p>قاطرة الأنشطة الموازية بالمؤسسة، يكتشف المواهب ويصقلها، ويدرّب المتعلمين على التفكير النقدي والعمل الجماعي والتواصل، ويشرف على الإذاعة المدرسية وعلى هذا الموقع.</p>
+        <ul>
+          <li>الإذاعة المدرسية</li>
+          <li>الكتابة والإلقاء</li>
+          <li>الرسم والأشغال اليدوية</li>
+          <li>المسرح المدرسي</li>
+          <li>المهارات الرقمية</li>
+          <li>المسابقات الثقافية</li>
+        </ul>
+      </div>
+      <div class="vis" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M100 30a50 50 0 00-28 91c6 5 10 12 10 20v7h36v-7c0-8 4-15 10-20a50 50 0 00-28-91z" fill="rgba(255,255,255,.15)"/>
+          <path d="M84 168h32M88 182h24"/>
+          <path d="M100 8v10M30 38l8 7M170 38l-8 7M10 100h12M178 100h12"/>
+          <path d="M88 90l12-14 12 14-12 20z" fill="#fff"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c4-4 8-8 8-13a8 8 0 10-16 0c0 5 4 9 8 13z"/><path d="M12 13V7M9 10l3-3 3 3"/></svg></div>
+        <h3>نادي البيئة والتنمية المستدامة</h3>
+        <p>غرس الأشجار، العناية بفضاءات المؤسسة، والتحسيس بحماية الماء والغطاء النباتي في الجبل.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h7a3 3 0 013 3v13a2 2 0 00-2-2H2zM22 4h-7a3 3 0 00-3 3v13a2 2 0 012-2h8z"/></svg></div>
+        <h3>نادي القراءة</h3>
+        <p>تحفيز حب المطالعة عبر مكتبة القسم، والمسابقات، وتقديم الكتب وتلخيصها.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+        <h3>نادي المواطنة وحقوق الإنسان</h3>
+        <p>ترسيخ قيم التسامح والاحترام، والاحتفاء بالمناسبات الوطنية والدينية.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>نادي الإعلاميات</h3>
+        <p>اكتساب المهارات الرقمية الأساسية، والاستعمال الآمن والمسؤول للإنترنت.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6 4 10s-1 7-4 10M12 2c-3 3-4 6-4 10s1 7 4 10"/></svg></div>
+        <h3>النادي الرياضي</h3>
+        <p>تنظيم الدوريات والألعاب الجماعية لتنمية الروح الرياضية واللياقة البدنية.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>نادي الصحة والسلامة</h3>
+        <p>التربية على النظافة والتغذية السليمة والوقاية، والسلامة الطرقية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- الإذاعة -->
+<section class="radio" id="radio">
+  <div class="wrap">
+    <div class="mic reveal" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="9" y="2" width="6" height="12" rx="3" fill="currentColor"/><path d="M5 11a7 7 0 0014 0M12 18v4M8 22h8"/></svg>
+    </div>
+    <div class="reveal">
+      <h2>الإذاعة المدرسية</h2>
+      <p>منبر المتعلمين للتعبير والإلقاء: فقرات صباحية تحمل القرآن الكريم، والحكمة، والمعلومة العلمية، والشعر، وأخبار المؤسسة، يعدّها ويقدّمها التلاميذ بإشراف نادي الإبداع وتنمية المهارات.</p>
+    </div>
+    <div class="eq reveal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- الأجندة -->
+<section id="agenda">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">نحتفي معًا</span>
+      <h2>أجندة المناسبات الوطنية والدولية</h2>
+      <p>محطات سنوية تحييها المؤسسة بأنشطة تربوية وفقرات إذاعية ومعارض.</p>
+      <div class="zellige-line"></div>
+    </div>
+    <div class="agenda-list">
+      <div class="date-card reveal"><div class="date-box"><b>6</b>نونبر</div><div><h4>ذكرى المسيرة الخضراء</h4><small>مناسبة وطنية</small></div></div>
+      <div class="date-card reveal"><div class="date-box"><b>18</b>نونبر</div><div><h4>عيد الاستقلال</h4><small>مناسبة وطنية</small></div></div>
+      <div class="date-card reveal"><div class="date-box"><b>20</b>نونبر</div><div><h4>اليوم العالمي للطفل</h4><small>مناسبة دولية</small></div></div>
+      <div class="date-card reveal"><div class="date-box"><b>18</b>دجنبر</div><div><h4>اليوم العالمي للغة العربية</h4><small>مناسبة دولية</small></div></div>
+      <div class="date-card reveal"><div class="date-box"><b>11</b>يناير</div><div><h4>ذكرى تقديم وثيقة الاستقلال</h4><small>مناسبة وطنية</small></div></div>
+      <div class="date-card reveal"><div class="date-box"><b>14</b>يناير</div><div><h4>رأس السنة الأمازيغية</h4><small>مناسبة وطنية</small></div></div>
+      <div class="date-card reveal"><div class="date-box"><b>8</b>مارس</div><div><h4>اليوم العالمي للمرأة</h4><small>مناسبة دولية</small></div></div>
+      <div class="date-card reveal"><div class="date-box"><b>22</b>أبريل</div><div><h4>يوم الأرض</h4><small>مناسبة دولية · نادي البيئة</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- فضاء الآباء -->
+<section class="parents" id="parents">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">شراكة مع الأسرة</span>
+      <h2>فضاء الآباء والأمهات</h2>
+      <p>نجاح الطفل مسؤولية مشتركة بين المدرسة والأسرة.</p>
+      <div class="zellige-line"></div>
+    </div>
+    <div class="parents-grid">
+      <div class="reveal">
+        <h3 class="side">نصائح لمرافقة طفلك</h3>
+        <div class="tips">
+          <div class="tip"><span class="n">1</span><p>احرص على حضور طفلك في الوقت المحدد ومواظبته على الدراسة.</p></div>
+          <div class="tip"><span class="n">2</span><p>خصّص وقتًا يوميًا قصيرًا للقراءة معه ومراجعة دفاتره.</p></div>
+          <div class="tip"><span class="n">3</span><p>شجّع مواهبه واهتماماته، وادعم مشاركته في الأندية.</p></div>
+          <div class="tip"><span class="n">4</span><p>تواصل بانتظام مع الأستاذ(ة) والإدارة لتتبّع مساره.</p></div>
+          <div class="tip"><span class="n">5</span><p>نظّم ساعات النوم واستعمال الشاشات، واهتم بفطوره الصباحي.</p></div>
+        </div>
+      </div>
+      <div class="faq reveal">
+        <h3 class="side">أسئلة شائعة</h3>
+        <details open><summary>كيف أسجّل طفلي بالمؤسسة؟</summary><p>يتم التسجيل لدى إدارة المؤسسة خلال الفترة التي تعلن عنها المديرية الإقليمية، مع إحضار الوثائق المطلوبة (نسخة من عقد الازدياد وما تحدده الإدارة).</p></details>
+        <details><summary>كيف أتتبّع نتائج ابني أو ابنتي؟</summary><p>يمكن الاطلاع على النتائج عبر خدمة «مسار» المخصصة للآباء والأمهات، أو بالتواصل المباشر مع الأستاذ(ة) والإدارة.</p></details>
+        <details><summary>كيف يشارك طفلي في الأندية والإذاعة المدرسية؟</summary><p>يكفي أن يُبدي رغبته لأستاذه أو للمشرفين على نادي الإبداع وتنمية المهارات، فالمشاركة مفتوحة لجميع المتعلمين.</p></details>
+        <details><summary>ما دور جمعية آباء وأمهات وأولياء التلاميذ؟</summary><p>هي شريك أساسي للمؤسسة، تساهم في تحسين ظروف التمدرس ودعم الأنشطة، وتمثّل الأسر في مجلس التدبير.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- التواصل -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">نرحّب بكم</span>
+      <h2>تواصلوا معنا</h2>
+      <div class="zellige-line"></div>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>العنوان</h3>
+        <p>م/م تيكرت نايت فارس<br>الوحدة المركزية وفرعيات تايفست وتماكوشت وآيت فارس<br>المديرية الإقليمية ورزازات<br>جهة درعة تافيلالت – المغرب</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>أوقات الاستقبال</h3>
+        <p>تستقبل الإدارة الآباء والأمهات خلال أيام الدراسة، في أوقات العمل الرسمية.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <h3>الإدارة</h3>
+        <p>لكل استفسار أو ملاحظة، يُرجى التوجه مباشرة إلى إدارة المؤسسة أو التواصل مع جمعية الآباء.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- التذييل -->
+<footer>
+  <div class="wrap cols">
+    <div>
+      <h4>مجموعة مدارس تيكرت نايت فارس</h4>
+      <p style="opacity:.85">مؤسسة تعليمية عمومية تابعة للمديرية الإقليمية ورزازات، الأكاديمية الجهوية للتربية والتكوين لجهة درعة تافيلالت.</p>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="#about">عن المؤسسة</a></li>
+        <li><a href="#units">الوحدات المدرسية</a></li>
+        <li><a href="#levels">المستويات الدراسية</a></li>
+        <li><a href="#clubs">الأندية التربوية</a></li>
+        <li><a href="#parents">فضاء الآباء</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>بوابات مفيدة</h4>
+      <ul>
+        <li><a href="https://www.men.gov.ma" target="_blank" rel="noopener">وزارة التربية الوطنية</a></li>
+        <li><a href="https://massarservice.men.gov.ma" target="_blank" rel="noopener">خدمة مسار</a></li>
+        <li><a href="https://www.taalimtice.ma" target="_blank" rel="noopener">بوابة TaalimTICE</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="credit">
+    <div class="wrap">
+      <div class="made">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0012 2z"/></svg>
+        <span>تم الإنشاء بواسطة</span>
+        <strong>نادي الإبداع وتنمية المهارات</strong>
+      </div>
+      <small>© <span id="yr">2026</span> مجموعة مدارس تيكرت نايت فارس — جميع الحقوق محفوظة</small>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="العودة إلى الأعلى">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)});
+
+  var links=[].slice.call(document.querySelectorAll('.menu a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  var top=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+120,cur=0;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+    top.classList.toggle('show',window.scrollY>600);
+  },{passive:true});
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
